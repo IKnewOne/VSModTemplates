@@ -1,132 +1,18 @@
 {
-  "__comment": "Forked from https://github.com/anegostudios/VSdotnetModTemplates",
-  "$schema": "https://json.schemastore.org/template",
-  "identity": "VSCodeModTemplate",
-  "author": "jayu",
-  "classifications": [ "Games", "Modding", "Vintage Story" ],
-  "name": "Vintage Story Code Mod",
-  "shortName": "vscodemod",
+  "$schema": "http://json.schemastore.org/template",
+  "author": "KnewOne",
+  "classifications": [ "Mod", "Game" ],
+  "identity": "KnewOne.VSCodeMod",
+  "name": "VS Code Mod",
+  "shortName": "vsmodtmpl",
   "sourceName": "_ProjectName_",
-  "description": "A project for creating a Vintage Story mod.",
+  "preferNameDirectory": true,
   "tags": {
     "language": "C#",
     "type": "solution",
     "editorTreatAs": "solution"
   },
   "symbols": {
-    "QuickStartCode": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Includes a ModSystem template to get you started quickly.",
-      "defaultValue": "true"
-    },
-    "EnableNullable": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Enable nullable reference types in the project.",
-      "defaultValue": "false"
-    },
-    "AddSampleCode": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Includes some sample code to get you started.",
-      "defaultValue": "false"
-    },
-    "AddAssetFolder": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Adds the asset folder to the template mod.",
-      "defaultValue": "true"
-    },
-    "IncludeVintageStoryCode": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Adds VSSurvivalMod, VSEssentials, VSCreativeMod and VintagestoryLib as reference to the project.",
-      "defaultValue": "true"
-    },
-    "IncludeExternalLibs": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Includes external libraries such as Newtonsoft.Json, Protobuf-net, cairo-sharp and Microsoft.Data.Sqlite.",
-      "defaultValue": "true"
-    },
-    "IncludeHarmony": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Adds Harmony as reference to the project.",
-      "defaultValue": "true"
-    },
-    "VSCodeTasks": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Include VSCode tasks.json and launch.json for testing.",
-      "defaultValue": "true"
-    },
-    "IncludeJetBrainsAnnotations": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Adds JetBrains.Annotations as reference to the project.",
-      "defaultValue": "false"
-    },
-    "IncludeGitHubReleaseTask": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Includes a CakeBuild task to release the mod as a GitHub Package",
-      "defaultValue": "false"
-    },
-    "SystemSpecificLaunchSettings": {
-      "type": "parameter",
-      "description": "Options to modify launch settings for specific systems.",
-      "datatype": "choice",
-      "enableQuotelessLiterals": true,
-      "choices": [
-        {
-          "choice": "ArmMacOsLaunchSettings",
-          "description": "Modify launch settings to work for arm64 macOS (You may only need this on macOS, maybe linux. Useless with scripts disabled)."
-        },
-        {
-          "choice": "SuppressWindowsConsoleWindow",
-          "description": "Suppresses the external console window on Windows."
-        },
-        {
-          "choice": "Default",
-          "description": "Default settings for all systems."
-        }
-      ],
-      "defaultValue": "Default"
-    },
-    "AddSampleConfig": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Includes a sample config loader setup.",
-      "defaultValue": "false"
-    },
-    "AddExtraBuildScripts": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Includes build.sh and build.ps1 scripts for building the mod with CakeBuild (Not needed on Rider).",
-      "defaultValue": "true"
-    },
-    "AdvancedHarmonySetup": {
-      "type": "parameter",
-      "datatype": "bool",
-      "description": "Include a more advanced Harmony setup with patch categories. Requires IncludeHarmony.",
-      "defaultValue": "false"
-    },
-    "VSInstall": {
-      "type": "parameter",
-      "datatype": "string",
-      "description": "The directory of the Vintage Story installation to use for references and Client/Server launcher.",
-      "defaultValue": "$(VINTAGE_STORY)",
-      "replaces": "$(VINTAGE_STORY)"
-    },
-    "ModAuthors": {
-      "type": "parameter",
-      "datatype": "string",
-      "description": "The names of the mod authors, surrounded by quotes, separated by commas.",
-      "defaultValue": "\"unknown\"",
-      "replaces": "_modauthors_"
-    },
     "ModSide": {
       "type": "parameter",
       "description": "The side of the mod, either 'client', 'server', or 'universal'.",
@@ -149,53 +35,48 @@
       "replaces": "_modside_",
       "defaultValue": "universal"
     },
+    "IncludeExternalLibs": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Includes external libraries such as Newtonsoft.Json, Protobuf-net, cairo-sharp and Microsoft.Data.Sqlite.",
+      "defaultValue": "true"
+    },
+    "IncludeHarmony": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Adds Harmony as reference to the project.",
+      "defaultValue": "true"
+    },
+    "AddSampleConfig": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Includes a sample config loader setup.",
+      "defaultValue": "true"
+    },
     "ModIdLowercase": {
       "isRequired": true,
       "type": "generated",
       "generator": "casing",
       "parameters": {
-        "source":"name",
+        "source": "name",
         "toLower": true
       },
       "replaces": "_modid_",
       "fileRename": "_modid_"
     }
   },
-  "sources": [
-    {
-      "modifiers": [
-        {
-          "condition": "(!AddSampleCode && !AddAssetFolder)",
-          "exclude": [
-            "_ProjectName_/assets/_modid_/**/*"
-          ]
-        },
-        {
-          "condition": "(!VSCodeTasks)",
-          "exclude": [
-            ".vscode/**/*"
-          ]
-        },
-        {
-          "condition": "(!AddSampleConfig)",
-          "exclude": [
-            "_ProjectName_/Config/**/*"
-          ]
-        },
-        {
-          "condition": "(!AdvancedHarmonySetup || !IncludeHarmony)",
-          "exclude": [
-            "_ProjectName_/_ProjectName_Core.PatchCategories.cs"
-          ]
-        },
-        {
-          "condition": "(!AddExtraBuildScripts)",
-          "exclude": [
-            "build.sh",
-            "build.ps1"
-          ]
-        }
-      ]
-    }
-  ]
+    "sources": [
+      {
+        "source": "_ProjectName_",
+        "modifiers": [
+          {
+            "condition": "(!AddSampleConfig)",
+            "exclude": [
+              "_ProjectName_/config/**/*",
+              "_ProjectName_/assets/_modid_/config/**/*"
+            ]
+          }
+        ]
+      }
+	]
 }

@@ -1,2 +1,0 @@
-VS Mod Templates v1.4.2
-- [Content Template] Do not pack solution file whoopsie

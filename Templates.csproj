@@ -2,18 +2,13 @@
   
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.4.2</PackageVersion>
-    <PackageId>jayugg.VintageStory.Mod.Templates</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <PackageId>KnewOne.VintageStory.Mod.Templates</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Title>Vintage Story Mod Templates</Title>
-    <Authors>jayu</Authors>
+    <Authors>KnewOne</Authors>
     <Description>Custom templates for creating Vintage Story mods</Description>
     <PackageTags>dotnet-new;templates;VintageStory;Modding</PackageTags>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageIcon>modicon.png</PackageIcon>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/jayugg/VSModTemplates</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/jayugg/VSModTemplates</PackageProjectUrl>
     <TargetFramework>net8.0</TargetFramework>
     
     <IncludeContentInPack>true</IncludeContentInPack>

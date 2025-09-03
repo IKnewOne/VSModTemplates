@@ -2,30 +2,14 @@
   "profiles": {
     "Client": {
       "commandName": "Executable",
-      //#if (SystemSpecificLaunchSettings == SuppressWindowsConsoleWindow)
-      "executablePath": "$(VINTAGE_STORY)/Vintagestory.exe",
-      "commandLineArgs": "--tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
-      //#elseif (SystemSpecificLaunchSettings == ArmMacOsLaunchSettings)
-      "executablePath": "$(VINTAGE_STORY)/Vintagestory",
-      "commandLineArgs": "--tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
-      //#else
       "executablePath": "dotnet",
-      "commandLineArgs": "\"$(VINTAGE_STORY)/Vintagestory.dll\" --tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
-      //#endif
+      "commandLineArgs": "\"$(VINTAGE_STORY)/Vintagestory.dll\" --tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)\"",
       "workingDirectory": "$(VINTAGE_STORY)"
     },
     "Server": {
       "commandName": "Executable",
-      //#if (SystemSpecificLaunchSettings == SuppressWindowsConsoleWindow)
-      "executablePath": "$(VINTAGE_STORY)/VintagestoryServer.exe",
-      "commandLineArgs": "--tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
-      //#elseif (SystemSpecificLaunchSettings == ArmMacOsLaunchSettings)
-      "executablePath": "$(VINTAGE_STORY)/VintagestoryServer",
-      "commandLineArgs": "--tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
-      //#else
       "executablePath": "dotnet",
-      "commandLineArgs": "\"$(VINTAGE_STORY)/VintagestoryServer.dll\" --tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
-      //#endif
+      "commandLineArgs": "\"$(VINTAGE_STORY)/VintagestoryServer.dll\" --tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)\"",
       "workingDirectory": "$(VINTAGE_STORY)"
     }
   }

@@ -1,4 +1,4 @@
-namespace _ProjectName_.Config;
+﻿namespace _ProjectName_.Config;
 
 public class ModConfig
 {

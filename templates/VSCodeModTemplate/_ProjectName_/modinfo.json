@@ -1,10 +1,12 @@
 {
   "type": "code",
-  "modid": "_modid_",
   "name": "_ProjectName_",
-  "side": "_modside_",
-  "authors": [ _modauthors_ ],
-  "description": "",
+  "modid": "_modid_",
   "version": "1.0.0",
-  "dependencies": { "game": "" }
+  "description": "Descripion",
+  "authors": [ "KnewOne" ],
+  "side": "_modside_",
+  "dependencies": {
+    "survival": "1.*.*"
+  }
 }

@@ -15,11 +15,11 @@ public class ConfigLoader : ModSystem
             if (Config == null)
             {
                 Config = new ModConfig();
-                Mod.Logger.VerboseDebug("Config file not found, creating a new one...");
+                Mod.Logger.VerboseDebug("[_ProjectName_]Config file not found, creating a new one...");
             }
             api.StoreModConfig(Config, ConfigName);
         } catch (Exception e) {
-            Mod.Logger.Error("Failed to load config, you probably made a typo: {0}", e);
+            Mod.Logger.Error("[_ProjectName_] Failed to load config, you probably made a typo: {0}", e);
             Config = new ModConfig();
         }
     }
@@ -29,13 +29,4 @@ public class ConfigLoader : ModSystem
         Config = null;
         base.Dispose();
     }
-
-    #if ( AddSampleCode )
-    public override void Start(ICoreAPI api)
-    {
-        // Properties can be used in json patches like this
-        // "condition": { "when": "_ProjectName__ExampleProperty", "isValue": "true" }
-        api.World.Config.SetBool("_ProjectName__ExampleProperty", Config.ExampleConfigSetting);
-    }
-    #endif
 }

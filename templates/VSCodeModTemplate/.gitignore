@@ -1,7 +1,0 @@
-*.DS_Store
-*.sln.DotSettings.user
-
-bin/
-obj/
-.idea/
-Releases/

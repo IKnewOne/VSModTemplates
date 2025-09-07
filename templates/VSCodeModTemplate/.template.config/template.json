@@ -1,0 +1,82 @@
+{
+  "__comment": "Forked from https://github.com/anegostudios/VSdotnetModTemplates",
+  "$schema": "https://json.schemastore.org/template",
+  "identity": "VSCodeModTemplate",
+  "author": "KnewOne",
+  "classifications": [ "Games", "Modding", "Vintage Story" ],
+  "name": "VS Code Mod",
+  "shortName": "vscodemod",
+  "sourceName": "_ProjectName_",
+  "description": "A project for creating a Vintage Story mod.",
+  "tags": {
+    "language": "C#",
+    "type": "solution",
+    "editorTreatAs": "solution"
+  },
+  "symbols": {
+    "ModSide": {
+      "type": "parameter",
+      "description": "The side of the mod, either 'client', 'server', or 'universal'.",
+      "datatype": "choice",
+      "enableQuotelessLiterals": true,
+      "choices": [
+        {
+          "choice": "client",
+          "description": "Client side mod, only runs on the client"
+        },
+        {
+          "choice": "server",
+          "description": "Server side mod, only runs on the server"
+        },
+        {
+          "choice": "universal",
+          "description": "Universal mod, runs on both client and server"
+        }
+      ],
+      "replaces": "_modside_",
+      "defaultValue": "universal"
+    },
+    "IncludeExternalLibs": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Includes external libraries such as Newtonsoft.Json, Protobuf-net, cairo-sharp and Microsoft.Data.Sqlite.",
+      "defaultValue": "true"
+    },
+    "IncludeHarmony": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Adds Harmony as reference to the project.",
+      "defaultValue": "true"
+    },
+    "AddSampleConfig": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Includes a sample config loader setup.",
+      "defaultValue": "true"
+    },
+    "ModIdLowercase": {
+      "isRequired": true,
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "name",
+        "toLower": true
+      },
+      "replaces": "_modid_",
+      "fileRename": "_modid_"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+          {
+            "condition": "(!AddSampleConfig)",
+            "exclude": [
+              "_ProjectName_/Config/**/*",
+              "_ProjectName_/assets/_modid_/config/configlib-patches.json"
+            ]
+          }
+        ]
+    }
+  ]
+}

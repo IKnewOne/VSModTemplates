@@ -1,0 +1,30 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/.idea.*.iml
+/.idea/**/*
+/projectSettingsUpdater.xml
+/contentModel.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+/discord.xml
+/encodings.xml
+/indexLayout.xml
+/vcs.xml
+
+# dotnet pack ignored files
+**/bin/**/*
+**/obj/**/*
+
+# GitHub Packages ignored files
+nuget.config
+
+.vs/
+.github/
+*.zip
+*.DS_Store
+/Install/
+/Install/README.md

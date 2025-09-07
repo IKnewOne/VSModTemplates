@@ -1,0 +1,12 @@
+{
+  "type": "code",
+  "name": "_ProjectName_",
+  "modid": "_modid_",
+  "version": "1.0.0",
+  "description": "Descripion",
+  "authors": [ "KnewOne" ],
+  "side": "_modside_",
+  "dependencies": {
+    "survival": ""
+  }
+}

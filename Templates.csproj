@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageVersion>1.2.2</PackageVersion>
+    <PackageId>KnewOne.VintageStory.Mod.Templates</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Title>Vintage Story Mod Templates</Title>
+    <Authors>KnewOne</Authors>
+    <Description>Custom templates for creating Vintage Story mods</Description>
+    <PackageTags>dotnet-new;templates;VintageStory;Modding</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>modicon.png</PackageIcon>
+    <TargetFramework>net8.0</TargetFramework>
+    
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+    <None Include=".\README.md" Pack="true" PackagePath="" />
+    <None Include=".\modicon.png" Pack="true" PackagePath="" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+</Project>

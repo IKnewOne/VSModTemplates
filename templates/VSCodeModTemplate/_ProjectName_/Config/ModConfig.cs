@@ -1,8 +1,8 @@
-﻿namespace _ProjectName_.Config;
+﻿namespace _ProjectName_;
 
 public class ModConfig
 {
-	private const string ConfigName = "_ProjectName_.json";
+	public const string ConfigName = "_ProjectName_.json";
 
-	public static ModConfig Instance { get; private set; };
+	public static ModConfig Instance { get; set; } = new ModConfig();
 }

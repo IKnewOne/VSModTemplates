@@ -54,6 +54,12 @@
       "description": "Includes a sample config loader setup.",
       "defaultValue": "true"
     },
+    "AddAdvancedConfig": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Also includes the config reloader action.",
+      "defaultValue": "true"
+    },
     "ModIdLowercase": {
       "isRequired": true,
       "type": "generated",
@@ -65,18 +71,5 @@
       "replaces": "_modid_",
       "fileRename": "_modid_"
     }
-  },
-  "sources": [
-    {
-      "modifiers": [
-          {
-            "condition": "(!AddSampleConfig)",
-            "exclude": [
-              "_ProjectName_/Config/**/*",
-              "_ProjectName_/assets/_modid_/config/configlib-patches.json"
-            ]
-          }
-        ]
-    }
-  ]
+  }
 }

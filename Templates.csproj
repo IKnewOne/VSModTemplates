@@ -2,7 +2,7 @@
   
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.2.2</PackageVersion>
+    <PackageVersion>1.2.5</PackageVersion>
     <PackageId>KnewOne.VintageStory.Mod.Templates</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Title>Vintage Story Mod Templates</Title>

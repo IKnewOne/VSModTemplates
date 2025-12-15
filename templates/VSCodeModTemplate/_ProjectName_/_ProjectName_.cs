@@ -5,7 +5,7 @@ using System;
 using Vintagestory.API.Common;
 
 namespace _ProjectName_;
-public class _ProjectName_ModSystem : ModSystem {
+public class _ProjectName_ : ModSystem {
 	public static ILogger Logger { get; private set; }
 	public static ICoreAPI Api { get; private set; }
 #if (IncludeHarmony)

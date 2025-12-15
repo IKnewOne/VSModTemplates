@@ -71,5 +71,18 @@
       "replaces": "_modid_",
       "fileRename": "_modid_"
     }
-  }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!AddSampleConfig)",
+          "exclude": [
+            "_ProjectName_/assets/_modid_/config/**",
+            "_ProjectName_/Config/**"
+          ]
+        }
+      ]
+    }
+  ]
 }

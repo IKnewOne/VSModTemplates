@@ -16,6 +16,8 @@ public class _ProjectName_ : ModSystem {
 #endif
 	public override void StartPre(ICoreAPI api) {
 		base.StartPre(api);
+		Logger = Mod.Logger;
+		Api = api;
 #if (IncludeHarmony)
         harmony = new Harmony(Mod.Info.ModID);
         harmony.PatchAll();
@@ -24,9 +26,6 @@ public class _ProjectName_ : ModSystem {
 
 	public override void Start(ICoreAPI api) {
 		base.Start(api);
-
-		Logger = Mod.Logger;
-		Api = api;
 
 #if (AddSampleConfig)
         try {
@@ -48,15 +47,10 @@ public class _ProjectName_ : ModSystem {
 		ConfigLibModSystem system = api.ModLoader.GetModSystem<ConfigLibModSystem>();
 
 		system.SettingChanged += (domain, config, setting) => {
-			if (domain != "bettererprospecting")
+			if (domain != "_modid_")
 				return;
 
-			// Color is a bit fucked rn
-			if (setting.AssignSettingValue(ModConfig.Instance) && setting.SettingType == ConfigSettingType.Color) {
-				ModConfig.Instance = api.LoadModConfig<ModConfig>(ModConfig.ConfigName);
-			}
-
-			SettingChanged.Invoke(setting);
+			setting.AssignSettingValue(ModConfig.Instance);
 		};
 	}
 #endif

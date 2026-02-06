@@ -39,24 +39,28 @@
     "IncludeExternalLibs": {
       "type": "parameter",
       "datatype": "bool",
+      "displayName": "Include External Libs",
       "description": "Includes external libraries such as Newtonsoft.Json, Protobuf-net, cairo-sharp and Microsoft.Data.Sqlite.",
       "defaultValue": "true"
     },
     "IncludeHarmony": {
       "type": "parameter",
       "datatype": "bool",
+      "displayName": "Include Harmony",
       "description": "Adds Harmony as reference to the project.",
       "defaultValue": "true"
     },
     "AddSampleConfig": {
       "type": "parameter",
       "datatype": "bool",
+      "displayName": "Add Sample Config",
       "description": "Includes a sample config loader setup.",
       "defaultValue": "true"
     },
     "AddAdvancedConfig": {
       "type": "parameter",
       "datatype": "bool",
+      "displayName": "Add Advanced Config",
       "description": "Also includes the config reloader action.",
       "defaultValue": "true"
     },

@@ -4,8 +4,6 @@ This repository contains the following templates, which can be used with Rider, 
 Template Name              Short Name    Language  Tags                       
 -------------------------  ------------  --------  ---------------------------
 Vintage Story Code Mod     vscodemod     [C#]      Games/Modding/Vintage Story
-Vintage Story Content Mod  vscontentmod  json      Games/Modding/Vintage Story
-         
 ```
 - vscodemod
 A modified version of the official template with a few more advanced options.
